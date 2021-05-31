@@ -1,9 +1,133 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>detail_pokemon</ion-title>
-  </ion-toolbar>
+<ion-header translucent>
 </ion-header>
 
-<ion-content>
+<ion-content fullscreen>
+  <ion-card *ngIf="pokemon">
+    <ion-img width-100 [src]="pokemon.sprite"></ion-img>
+    <ion-card-header class="ion-text-center">  
+      <ion-card-title class="ion-text-capitalize">{{pokemon.name}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="4" class="ion-text-center">
+            <ion-text>Tipo</ion-text>
+          </ion-col>
+          <ion-col size="4">
+            <ion-img [src]="'assets/img/'+pokemon.type+ '.gif'"></ion-img>
+          </ion-col>
+          <ion-col size="4">
+            <ion-img  *ngIf="pokemon.type2" [src]="'assets/img/'+pokemon.type2+ '.gif'"></ion-img>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col size="4" class="ion-text-center">
+            <ion-text>Habilidad</ion-text>
+          </ion-col>
+          <ion-col size="8" class="ion-text-center">
+            <ng-container *ngFor="let ab of pokemon.getAbilities()">
+              <ion-text>{{ab.ability.name}}</ion-text>
+              <br/>
+            </ng-container>
+          </ion-col>
+        </ion-row>
+
+        <ion-row *ngIf="pokemon.hasHiddenAbility()">
+          <ion-col size="4" class="ion-text-center">
+            <ion-text>Habilidad oculta</ion-text>
+          </ion-col>
+          <ion-col size="4" class="ion-text-center">
+            <ion-text>{{pokemon.getHiddenAbility()}}</ion-text>
+          </ion-col>
+        </ion-row>
+
+
+        <ion-row>
+          <ion-col size="4" class="ion-text-center">
+            <ion-text>Peso</ion-text>
+          </ion-col>
+          <ion-col size="8" class="ion-text-center">
+            <ion-text>{{pokemon.getWeighttToKg()+ ' kg'}}</ion-text>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col size="4" class="ion-text-center">
+            <ion-text>Altura</ion-text>
+          </ion-col>
+          <ion-col size="8" class="ion-text-center">
+            <ion-text>{{pokemon.getHeightToMetres()+ ' m'}}</ion-text>
+          </ion-col>
+        </ion-row>
+
+
+        <ion-row>
+          <ion-col size="12" class="ion-text-center">
+            <ion-text>Estadisticas</ion-text>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col size="6" class="ion-text-center">
+            <ion-text>PS</ion-text>
+          </ion-col>
+          <ion-col size="6" class="ion-text-center">
+            <ion-text>{{pokemon.getStat('hp')}}</ion-text>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col size="6" class="ion-text-center">
+            <ion-text>Ataque</ion-text>
+          </ion-col>
+          <ion-col size="6" class="ion-text-center">
+            <ion-text>{{pokemon.getStat('attack')}}</ion-text>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col size="6" class="ion-text-center">
+            <ion-text>Defensa</ion-text>
+          </ion-col>
+          <ion-col size="6" class="ion-text-center">
+            <ion-text>{{pokemon.getStat('defense')}}</ion-text>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col size="6" class="ion-text-center">
+            <ion-text>Ataque especial</ion-text>
+          </ion-col>
+          <ion-col size="6" class="ion-text-center">
+            <ion-text>{{pokemon.getStat('special-attack')}}</ion-text>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col size="6" class="ion-text-center">
+            <ion-text>Defensa especial</ion-text>
+          </ion-col>
+          <ion-col size="6" class="ion-text-center">
+            <ion-text>{{pokemon.getStat('special-defense')}}</ion-text>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col size="6" class="ion-text-center">
+            <ion-text>Velocidad</ion-text>
+          </ion-col>
+          <ion-col size="6" class="ion-text-center">
+            <ion-text>{{pokemon.getStat('speed')}}</ion-text>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+  <ion-fab horizontal="end" vertical="bottom" slot="fixed" (click)="goBack()" color="primary">
+    <ion-fab-button color="light">
+      <ion-icon name="close-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 
 </ion-content>

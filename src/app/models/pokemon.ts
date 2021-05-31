@@ -31,7 +31,7 @@ export class Pokemon {
     getHeightToMetres(){
         return this.height/10
     }
-    getWieghttToKg(){
+    getWeighttToKg(){
         return this.weight/10
     }
 }

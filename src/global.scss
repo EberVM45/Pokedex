@@ -24,6 +24,12 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+ion-header{
+    background: url('assets/img/pokedex-header.png') no-repeat;
+    min-height: 56px;
+    background-size: cover;
+}
 ion-text {
     color: #000000;
     font-size: 1.2rem;
@@ -38,4 +44,7 @@ ion-content {
     --background: -ms-linear-gradient(top, rgba(246,41,12,1) 0%, rgba(216,43,47,1) 9%, rgba(240,47,23,1) 67%, rgba(241,111,92,1) 95%, rgba(241,111,92,1) 100%);
     --background: linear-gradient(to bottom, rgba(246,41,12,1) 0%, rgba(216,43,47,1) 9%, rgba(240,47,23,1) 67%, rgba(241,111,92,1) 95%, rgba(241,111,92,1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6290c', endColorstr='#f16f5c', GradientType=0 );
+}
+ion-card{
+    background: transparent;
 }
