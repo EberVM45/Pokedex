@@ -9,7 +9,10 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HTTP } from '@ionic-native/http/ngx';
 import { ScreenOrientation } from '@ionic-native/screen-orientation/ngx';
-
+import { Flashlight } from '@ionic-native/flashlight/ngx';
+import { Device } from '@ionic-native/device/ngx';
+import { Vibration } from '@ionic-native/vibration/ngx';
+ 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -20,6 +23,9 @@ import { ScreenOrientation } from '@ionic-native/screen-orientation/ngx';
     StatusBar,
     SplashScreen,
     ScreenOrientation,
+    Flashlight,
+    Device,
+    Vibration,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })

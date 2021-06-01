@@ -1,3 +1,13 @@
 <ion-app *ngIf="load">
-  <ion-router-outlet></ion-router-outlet>
+  <ion-menu side="end" menuId="primerMenu" content-id="content">
+    <ion-header>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-item [routerLink]="['list-pokemons']">Pokemones</ion-item>
+        <ion-item [routerLink]="['capacitores']">Otras funciones</ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="content"></ion-router-outlet>
 </ion-app>

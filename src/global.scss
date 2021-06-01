@@ -30,6 +30,11 @@ ion-header{
     min-height: 56px;
     background-size: cover;
 }
+ion-toolbar{
+    background: url('assets/img/pokedex-header.png') no-repeat;
+    min-height: 56px;
+    background-size: cover;
+}
 ion-text {
     color: #000000;
     font-size: 1.2rem;

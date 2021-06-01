@@ -28,6 +28,7 @@ export class AppComponent {
       this.splashScreen.hide();
       this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
       this.load=true;
+      this.statusBar.overlaysWebView(true);
     })
   }
 }

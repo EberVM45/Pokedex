@@ -4,7 +4,6 @@ import { Component, OnInit } from '@angular/core';
 import { pipe } from 'rxjs';
 import { error } from 'selenium-webdriver';
 import { LoadingController, NavController, NavParams } from '@ionic/angular';
-
 @Component({
   selector: 'app-list-pokemons',
   templateUrl: './list-pokemons.page.html',
@@ -33,7 +32,6 @@ export class ListPokemonsPage implements OnInit {
         if(!$event){
           loading = await this.loadingController.create({
             message: 'Cargando...',
-            duration:2000
           });
           await loading.present();
         }
