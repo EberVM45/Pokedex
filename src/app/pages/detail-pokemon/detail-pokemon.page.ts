@@ -1,7 +1,6 @@
 import { Pokemon } from './../../models/pokemon';
 import { Component, OnInit } from '@angular/core';
 import { NavController, NavParams } from '@ionic/angular';
-import { Vibration } from '@ionic-native/vibration/ngx';
 
 @Component({
   selector: 'app-detail-pokemon',
@@ -13,7 +12,6 @@ export class DetailPokemonPage implements OnInit {
   constructor(
     private navParams:NavParams,
     private navCtrl:NavController,
-    private vibracion: Vibration
   ) { 
     this.pokemon =this.navParams.data.pokemon;
     console.log(this.pokemon);
@@ -23,8 +21,5 @@ export class DetailPokemonPage implements OnInit {
   }
   goBack(){
     this.navCtrl.pop();
-  }
-  vibrar(){
-    this.vibracion.vibrate([2000,1000,2000]);
   }
 }

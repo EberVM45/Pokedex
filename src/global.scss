@@ -39,7 +39,12 @@ ion-text {
     color: #000000;
     font-size: 1.2rem;
 }
-  
+ion-item{
+    background: transparent;
+  }
+ion-row{
+    background: transparent;
+  }
 ion-content {
     --background: rgba(246,41,12,1);
     --background: -moz-linear-gradient(top, rgba(246,41,12,1) 0%, rgba(216,43,47,1) 9%, rgba(240,47,23,1) 67%, rgba(241,111,92,1) 95%, rgba(241,111,92,1) 100%);

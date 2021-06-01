@@ -1,6 +1,8 @@
 import { Flashlight } from '@ionic-native/flashlight/ngx';
 import { Component, OnInit } from '@angular/core';
 import { Device } from '@ionic-native/device/ngx';
+import { Vibration } from '@ionic-native/vibration/ngx';
+
 @Component({
   selector: 'app-capacitores',
   templateUrl: './capacitores.page.html',
@@ -16,17 +18,21 @@ export class CapacitoresPage implements OnInit {
   manufacturer:any;
   isVirtual:any;
   serialNo:any;
+  public bandera:boolean;
   constructor(
     private flashlight:Flashlight,
-    public device:Device
+    public device:Device,
+    public vibracion:Vibration
   ) { 
     this.active=false
+    this.bandera=false
   }
 
   ngOnInit() {
   }
 
   getDeviceInfo(){
+    this.bandera=true;
     this.cordovaVersion=this.device.cordova;
     this.model=this.device.model;
     this.platform=this.device.platform
@@ -46,5 +52,8 @@ export class CapacitoresPage implements OnInit {
     }else{
       this.flashlight.switchOff();
     }
+  }
+  vibrar(){
+    this.vibracion.vibrate([2000,1000,2000]);
   }
 }

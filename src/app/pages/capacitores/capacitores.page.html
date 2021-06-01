@@ -1,10 +1,4 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>capacitores</ion-title>
-    <ion-buttons slot="end">
-      <ion-menu-button menu="primerMenu"></ion-menu-button>
-    </ion-buttons>  
-  </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true" class="ion-padding">
@@ -22,39 +16,37 @@
         <ion-toggle [checked]="" (ionChange)="flash()"></ion-toggle>
       </ion-col>
     </ion-row>
-
-    <ion-row>
-      <ion-button color="primary" expand="block" (click)="getDeviceInfo()">Info dispositivo</ion-button>
-
-      <ion-item *ngIf="cordovaVersion" textwrap>
-        <ion-text>Cordova version:{{cordovaVersion}}</ion-text>
-      </ion-item>
-      <ion-item *ngIf="model" textwrap>
-        <ion-text>Modelo:{{model}}</ion-text>
-      </ion-item>
-      <ion-item *ngIf="platform" textwrap>
-        <ion-text>Plataforma:{{platform}}</ion-text>
-      </ion-item>
-      <ion-item *ngIf="uuid" textwrap>
-        <ion-text>UUID:{{uuid}}</ion-text>
-      </ion-item>
-      <ion-item *ngIf="platformVersion" textwrap>
-        <ion-text>Version de plataforma:{{platformVersion}}</ion-text>
-      </ion-item>
-      <ion-item *ngIf="manufacturer" textwrap>
-        <ion-text>Manofactura:{{manufacturer}}</ion-text>
-      </ion-item>
-      <ion-item *ngIf="isVirtual" textwrap>
-        <ion-text>Virtual:{{isVirtual}}</ion-text>
-      </ion-item>
-      <ion-item *ngIf="serialNo" textwrap>
-        <ion-text>No. Serial:{{serialNo}}</ion-text>
-      </ion-item>
-    </ion-row>
-
-    <ion-row>
-      <ion-button expand="block" (click)="vibrar()">Vibrar</ion-button>
-    </ion-row>
-
   </ion-grid>
+
+
+    <ion-button color="primary" expand="full" (click)="getDeviceInfo()">Info dispositivo</ion-button>
+    <ion-list *ngIf="bandera">
+      <ion-item *ngIf="cordovaVersion">
+        <ion-text >Cordova version: {{cordovaVersion}}</ion-text>
+      </ion-item>
+      <ion-item *ngIf="model">
+        <ion-text>Modelo: {{model}}</ion-text>
+      </ion-item>
+      <ion-item *ngIf="platform">
+        <ion-text>Plataforma: {{platform}}</ion-text>
+      </ion-item>
+      <ion-item *ngIf="uuid">
+        <ion-text>UUID: {{uuid}}</ion-text>
+      </ion-item>
+      <ion-item *ngIf="platformVersion">
+        <ion-text>Version de plataforma: {{platformVersion}}</ion-text>
+      </ion-item>
+      <ion-item *ngIf="manufacturer">
+        <ion-text>Manofactura: {{manufacturer}}</ion-text>
+      </ion-item>
+      <ion-item *ngIf="isVirtual">
+        <ion-text>Virtual: {{isVirtual}}</ion-text>
+      </ion-item>
+      <ion-item *ngIf="serialNo">
+        <ion-text>No. Serial: {{serialNo}}</ion-text>
+      </ion-item>  
+    </ion-list>
+
+    <ion-button expand="full" (click)="vibrar()">Vibrar</ion-button>
+
 </ion-content>
